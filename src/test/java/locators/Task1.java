@@ -30,15 +30,17 @@ public class Task1 {
             System.out.println(matcher.group(0));
         }
 
+        List<WebElement> actualHeaders = driver.findElements(By.xpath("//th"));
+
         List<String> expectedHeaders = List.of("Lorem", "Ipsum", "Dolor", "Sit", "Amet", "Diceret", "Action");
-        boolean areHeadersEqual = validateHeaders(expectedHeaders);
+        boolean areHeadersEqual = validateHeaders(expectedHeaders, actualHeaders);
         System.out.println(areHeadersEqual);
 
+        // wiersze liczymy od 1
         System.out.println(getTextFromTable(1,"Ipsum"));
     }
 
-    public static boolean validateHeaders(List<String> expectedHeaders) {
-        List<WebElement> actualHeaders = driver.findElements(By.xpath("//th"));
+    public static boolean validateHeaders(List<String> expectedHeaders, List<WebElement> actualHeaders) {
         List<String> headersText = actualHeaders
                 .stream()
                 .map(WebElement::getText)
@@ -61,10 +63,12 @@ public class Task1 {
                 .map(WebElement::getText)
                 .toList();
 
-        int columnIndex = headersText.indexOf(columnName);
+        // to wyszuka tekstu w liście i zwróci indeks liczony od zera
+        int columnIndex = headersText.indexOf(columnName) + 1;
 
         String locatorForSpecificCell = "//tbody/tr[" + row + "]/td[" + columnIndex + "]";
         System.out.println(locatorForSpecificCell);
+
         WebElement cell = driver.findElement(By.xpath(locatorForSpecificCell));
         return cell.getText();
     }
