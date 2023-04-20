@@ -8,6 +8,7 @@ import org.openqa.selenium.WebElement;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.assertj.core.api.Assertions.*;
 
 public class BadLoginTest extends BaseTest {
     @ParameterizedTest
@@ -33,6 +34,8 @@ public class BadLoginTest extends BaseTest {
 
         WebElement message = driver.findElement(By.id("flash"));
 
-        assertTrue(message.getText().contains("is invalid!"));
+        // assertTrue(message.getText().contains("is invalid!"));
+        assertThat(message.getText()).startsWith("Your").endsWith("is invalid!\n×");
     }
 }
+
