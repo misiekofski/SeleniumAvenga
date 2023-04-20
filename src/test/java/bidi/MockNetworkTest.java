@@ -1,5 +1,6 @@
 package bidi;
 
+import base.BaseTest;
 import com.google.common.net.MediaType;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

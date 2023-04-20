@@ -1,5 +1,6 @@
 package bidi;
 
+import base.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.devtools.DevTools;
 import org.openqa.selenium.devtools.HasDevTools;

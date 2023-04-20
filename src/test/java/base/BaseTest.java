@@ -1,5 +1,7 @@
-package bidi;
+package base;
 
+import driver.DriverFactory;
+import driver.DriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
@@ -10,7 +12,7 @@ public class BaseTest {
 
     @BeforeEach
     void setupDriver() {
-        driver = new ChromeDriver();
+        driver = DriverFactory.CHROME.getDriverManager().getDriver();
     }
 
     @AfterEach

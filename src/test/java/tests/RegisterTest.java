@@ -1,31 +1,17 @@
 package tests;
 
-import config.DriverSetup;
-import org.junit.jupiter.api.BeforeEach;
+import base.BaseTest;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.RegistrationPage;
 
 import java.sql.Timestamp;
-import java.time.Duration;
-import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class RegisterTest {
-    WebDriver driver;
-
-    @BeforeEach
-    void setUp() {
-        driver = DriverSetup.getDriver();
-        driver.get("https://react-redux.realworld.io");
-    }
-
+public class RegisterTest extends BaseTest {
     @Test
     void testUserRegistration() {
+        driver.get("https://react-redux.realworld.io");
         RegistrationPage rp = new RegistrationPage(driver);
         Timestamp timestamp = new Timestamp(System.currentTimeMillis());
 

@@ -1,4 +1,4 @@
-package config;
+package configsimple;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
