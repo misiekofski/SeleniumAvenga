@@ -1,5 +1,6 @@
 package advanced;
 
+import base.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,11 +12,9 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Task4Test {
+public class Task4Test extends BaseTest {
     @Test
     void testDynamicButtons() {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().window().maximize();
         driver.get("https://testpages.herokuapp.com/styled/expandingdiv.html");
 
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));

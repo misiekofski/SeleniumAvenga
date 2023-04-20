@@ -19,7 +19,6 @@ public class Task1Test {
 
     @Test
     void basicAjaxTest() {
-        driver.manage().window().maximize();
         driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
 
         BasicAjaxPage bap = new BasicAjaxPage(driver);

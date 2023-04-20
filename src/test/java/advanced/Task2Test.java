@@ -1,5 +1,6 @@
 package advanced;
 
+import base.BaseTest;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -11,12 +12,9 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Task2Test {
+public class Task2Test extends BaseTest {
     @Test
     void testDynamicTable() {
-        WebDriver driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.manage().window().maximize();
         driver.get("https://testpages.herokuapp.com/styled/tag/dynamic-table.html");
 
         WebElement tableData = driver.findElement(By.xpath("//summary"));

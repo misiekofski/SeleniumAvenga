@@ -12,6 +12,7 @@ public class BaseTest {
 
     @BeforeEach
     void setupDriver() {
+
         driver = DriverFactory.CHROME.getDriverManager().getDriver();
     }
 
