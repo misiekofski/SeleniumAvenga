@@ -1,5 +1,6 @@
 package tests;
 
+import config.DriverSetup;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.By;
@@ -19,9 +20,7 @@ public class RegisterTest {
 
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-        driver.manage().window().maximize();
+        driver = DriverSetup.getDriver();
         driver.get("https://react-redux.realworld.io");
     }
 
