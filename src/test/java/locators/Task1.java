@@ -38,6 +38,8 @@ public class Task1 {
 
         // wiersze liczymy od 1
         System.out.println(getTextFromTable(1,"Ipsum"));
+
+        driver.quit();
     }
 
     public static boolean validateHeaders(List<String> expectedHeaders, List<WebElement> actualHeaders) {
