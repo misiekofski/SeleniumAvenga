@@ -37,6 +37,7 @@ public class RemoteDriverManager extends DriverManager {
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--disable-notifications");
             options.addArguments("--start-maximized");
+            options.addArguments("--headless=new");
             options.addArguments("--disable-features=EnableEphemeralFlashPermission");
             options.addArguments("--disable-infobars");
 
