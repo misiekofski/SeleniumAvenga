@@ -13,7 +13,7 @@ public class BaseTest {
     @BeforeEach
     void setupDriver() {
 
-        driver = DriverFactory.CHROME.getDriverManager().getDriver();
+        driver = DriverFactory.SELENIUM_GRID.getDriverManager().getDriver();
     }
 
     @AfterEach

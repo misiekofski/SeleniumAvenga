@@ -1,5 +1,6 @@
 package advanced;
 
+import base.BaseTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.openqa.selenium.WebDriver;
@@ -9,14 +10,7 @@ import pages.BasicAjaxPage;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Task1Test {
-    WebDriver driver;
-
-    @BeforeEach
-    void setUp() {
-        driver = new ChromeDriver();
-    }
-
+public class Task1Test extends BaseTest {
     @Test
     void basicAjaxTest() {
         driver.get("https://testpages.herokuapp.com/styled/basic-ajax-test.html");
