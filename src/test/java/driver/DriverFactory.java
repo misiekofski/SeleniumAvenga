@@ -8,7 +8,7 @@ public enum DriverFactory {
             return new ChromeDriverManager();
         }
     },
-    SELENIUM_GRID{
+    SELENIUM_GRID {
         @Override
         public DriverManager getDriverManager() {
             return new RemoteDriverManager();
